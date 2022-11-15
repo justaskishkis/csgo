@@ -1,0 +1,12 @@
+<div class="app-list-container">
+  <div class="app-list-container__heading">
+    <app-heading [text]="headingText"></app-heading>
+  </div>
+  <ul class="app-list-container__item-list">
+    <li
+      class="app-list-container__item-list-item"
+      *ngFor="let item of items">
+      <app-list-item [listItem]="item"></app-list-item>
+    </li>
+  </ul>
+</div>

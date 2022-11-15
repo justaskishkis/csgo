@@ -1,0 +1,11 @@
+<div class="app-list-item">
+  <div class="app-list-item__name">
+    {{ listItem?.node?.name }}
+  </div>
+  <div class="app-list-item__icon">
+    <app-image [imageUrl]="listItem?.node?.iconUrl"></app-image>
+  </div>
+  <div class="app-list-item__cost">
+    {{ listItem?.node?.cost }}
+  </div>
+</div>
