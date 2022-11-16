@@ -1,5 +1,5 @@
 # homework
-
+1. tech used: Angular 14, GQL, SASS, BEM for css methodology
 
 ## BUGs found
 1.
