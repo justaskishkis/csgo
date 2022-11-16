@@ -1,0 +1,13 @@
+// TODO: need to add to global variables so we dont need '../../'
+@import '../../../assets/style/variables/index'
+@import '../../../assets/style/mixins'
+
+$loadingSize: 100px
+
+.app-loading
+  @include size($loadingSize, $loadingSize)
+  border: 1px solid black
+  border-radius: 50%
+  display: flex
+  justify-content: center
+  align-items: center

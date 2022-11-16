@@ -8,4 +8,7 @@
   <div class="app-list-item__cost">
     {{ listItem?.node?.cost }}
   </div>
+  <div class="app-list-item__action">
+    <app-button (click)="handleOnItemClick()" [text]="listItemActionText"></app-button>
+  </div>
 </div>

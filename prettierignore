@@ -1,0 +1,12 @@
+.eslintcache
+.vscode
+.idea
+.env
+.DS_Store
+node_modules
+.module-cache
+*.log*
+build
+dist
+report.*
+storybook-static

@@ -1,0 +1,7 @@
+@mixin ellipsis($max-width: 100%, $display: -webkit-box, $line-count: 1)
+  max-width: $max-width
+  white-space: normal
+  display: $display
+  -webkit-line-clamp: $line-count
+  -webkit-box-orient: vertical
+  overflow: hidden

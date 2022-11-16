@@ -1,7 +1,6 @@
-import {gql} from 'apollo-angular';
-import {Injectable} from '@angular/core';
+import { gql } from 'apollo-angular';
+import { Injectable } from '@angular/core';
 import * as Apollo from 'apollo-angular';
-
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -6699,7 +6698,7 @@ export enum MessageChannel {
   En = 'EN',
   HighRoller = 'HIGH_ROLLER',
   Pt = 'PT',
-  Sv = 'SV'
+  Sv = 'SV',
 }
 
 export type MessageConnection = {
@@ -17014,10 +17013,43 @@ export type ZincProductSearchPayload = {
   products: Array<ZincProductSearchItem>;
 };
 
+export type OpenBoxMutationVariables = Exact<{
+  input: OpenBoxInput;
+}>;
+
+
+export type OpenBoxMutation = { __typename?: 'Mutation', openBox?: { __typename?: 'CreateBoxOpeningPayload', boxOpenings?: Array<{ __typename?: 'BoxOpening', id: string, itemVariant?: { __typename?: 'ItemVariant', id: string, name?: string | null, value: number } | null } | null> | null } | null };
+
 export type ListQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
 
 export type ListQueryQuery = { __typename?: 'Query', boxes: { __typename?: 'BoxConnection', edges?: Array<{ __typename?: 'BoxEdge', node?: { __typename?: 'Box', id: string, name?: string | null, iconUrl?: string | null, cost?: number | null } | null } | null> | null } };
 
+export const OpenBoxDocument = gql`
+    mutation OpenBox($input: OpenBoxInput!) {
+  openBox(input: $input) {
+    boxOpenings {
+      id
+      itemVariant {
+        id
+        name
+        value
+      }
+    }
+  }
+}
+    `;
+
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class OpenBoxGQL extends Apollo.Mutation<OpenBoxMutation, OpenBoxMutationVariables> {
+    override document = OpenBoxDocument;
+
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
+  }
 export const ListQueryDocument = gql`
     query ListQuery {
   boxes(free: false, purchasable: true, openable: true) {
@@ -17033,13 +17065,13 @@ export const ListQueryDocument = gql`
 }
     `;
 
-@Injectable({
-  providedIn: 'root'
-})
-export class ListQueryGQL extends Apollo.Query<ListQueryQuery, ListQueryQueryVariables> {
-  override document = ListQueryDocument;
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class ListQueryGQL extends Apollo.Query<ListQueryQuery, ListQueryQueryVariables> {
+    override document = ListQueryDocument;
 
-  constructor(apollo: Apollo.Apollo) {
-    super(apollo);
+    constructor(apollo: Apollo.Apollo) {
+      super(apollo);
+    }
   }
-}

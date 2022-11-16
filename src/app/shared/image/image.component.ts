@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-image',
@@ -7,4 +7,8 @@ import {Component, Input} from '@angular/core';
 })
 export class AppImageComponent {
   @Input() imageUrl?: string | null;
+
+  // TODO: handle image loading state with a default image
+
+  // TODO: handle image state when image load failed
 }

@@ -1,2 +1,9 @@
-.app-button
-  color: red
+// TODO: need to add to global variables so we dont need '../../'
+@import '../../../assets/style/variables/index'
+@import '../../../assets/style/mixins'
+
+.app-layout
+  display: flex
+
+  &__header
+    padding-bottom: $spacePrimary

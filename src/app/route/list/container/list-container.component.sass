@@ -1,2 +1,16 @@
+// TODO: need to add to global variables so we dont need '../../'
+@import '../../../../assets/style/variables/index'
+@import '../../../../assets/style/mixins'
+
 .app-list-container
-  display: block
+
+  &__item-list
+    display: block
+    list-style: none
+    padding: 0
+    margin: 0
+    border-radius: $bdrsPrimary
+    @include clearfix()
+
+  &__item-list-item
+    float: left

@@ -1,1 +1,13 @@
-<h1>Item</h1>
+<div class="app-item-container">
+  <div class="app-item-container__heading">
+    <app-heading [text]="translate.heading"></app-heading>
+  </div>
+  <div
+    *ngIf="!(item$ | async)"
+    class="app-item-container__loading">
+    <app-loading></app-loading>
+  </div>
+  <app-item
+    *ngIf="(item$ | async)"
+    [item]="(item$ | async)"></app-item>
+</div>
