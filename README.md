@@ -13,7 +13,8 @@
   }
   
   this generated model from gql endpoint has a duplicate selector,
-  i removed it manually
+  i removed it manually  
+
 2.
   generated file from a library had a missing "override" property for the "document" variable, i also added it manually
   export class ListQueryGQL extends Apollo.Query<ListQueryQuery, ListQueryQueryVariables> {
